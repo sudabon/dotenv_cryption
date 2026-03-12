@@ -14,8 +14,23 @@
 
 ## インストール
 
+GitHub Releases から利用している環境に対応した tarball をダウンロードしてください。
+
+- Apple Silicon Mac: `envcrypt_<version>_darwin_arm64.tar.gz`
+- Intel Mac: `envcrypt_<version>_darwin_amd64.tar.gz`
+- Linux x86_64: `envcrypt_<version>_linux_amd64.tar.gz`
+
+Releases: `https://github.com/sudabon/dotenv_cryption/releases`
+
 ```bash
-go install github.com/sudabon/dotenv_cryption@latest
+VERSION=v0.1.0
+OS=darwin
+ARCH=arm64
+
+curl -LO "https://github.com/sudabon/dotenv_cryption/releases/download/${VERSION}/envcrypt_${VERSION}_${OS}_${ARCH}.tar.gz"
+tar -xzf "envcrypt_${VERSION}_${OS}_${ARCH}.tar.gz"
+install -m 0755 envcrypt /usr/local/bin/envcrypt
+envcrypt version
 ```
 
 ## セットアップ
